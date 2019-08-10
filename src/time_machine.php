@@ -6,6 +6,7 @@
  *      Released August 10, 2019                                             *
  *      Author: Jalal Uddin     (Digital Footprint: DG)                      *
  *      License: MIT License                                                 *
+ *      SEE DOCUMENTATION in README.md                                       *
  *                                                                           *
  *****************************************************************************/
   
