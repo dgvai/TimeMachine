@@ -614,6 +614,15 @@
         const OBJ   =   2;
     }
 
+    class Interval extends TimeMachine
+    {
+        const MIN_1     =   'PT1M';     const MIN_5     =   'PT5M';     const MIN_10    =   'PT10M';    const MIN_30    =   'PT30M';
+        const HOUR_1    =   'PT1H';     const HOUR_6    =   'PT6H';     const HOUR_12   =   'PT12H';
+        const DAY_1     =   'P1D';      const DAY_7     =   'P7D';      const DAY_15    =   'P15D';     const DAY_30    =   'P30D';
+        const MON_1     =   'P1M';      const MON_3     =   'P3M';      const MON_6     =   'P6M';
+        const YEAR_1    =   'P1Y';      const YEAR_4    =   'P4Y';
+    }
+
     class Period extends TimeMachine
     {
         const A_DAY     =   'P1D';      const AN_HOUR   =   'PT1H';
