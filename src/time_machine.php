@@ -124,7 +124,7 @@
             return $this;
         }
 
-        public static function GetDifference(TimeMachine $DateTime1, TimeMachine $DateTime2, $__DiffString, $__absolute = false)
+        public static function GetDifference(TimeMachine $DateTime1, TimeMachine $DateTime2, $__DiffResult, $__absolute = false)
         {
             $difference = $DateTime1->DateTime->diff($DateTime2->DateTime,$__absolute);
             $invert = ($difference->invert == 1) ? -1 : 1;
@@ -132,7 +132,7 @@
             $signed_data = array_map(function($val) use ($invert) {
                 return $invert*$val;
             }, $data);
-            switch($__DiffString)
+            switch($__DiffResult)
             {
                 case 1 :
                     return $signed_data;
@@ -626,6 +626,6 @@
     class Period extends TimeMachine
     {
         const A_DAY     =   'P1D';      const AN_HOUR   =   'PT1H';
-        const A_MONTH   =   'P1M';      const A_MIN     =   'PT1M';
+        const A_MON     =   'P1M';      const A_MIN     =   'PT1M';
         const A_YEAR    =   'P1Y';      const A_SEC     =   'PT1S';
     }
