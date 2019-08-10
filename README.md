@@ -154,3 +154,56 @@ You just have to **include or clone** this class file to you workspace! That's a
   // returns 
   TimeMachine Object
 ```
+
+## Enumerators
+>Since PHP does not have enumurators, constants in classes are used as static enumerators
+
+Enumerators comes in several classes they are used for. Some string enumerators can be passed as string as parameter directly
+to work. You can also define your own enumerators in these classes to ease your work and to enhance this library.
+> **Note** If you use a code editor or IDE like VS Code (... etc), these enums will suggest to ease your coding!
+
+### Zone
+*Zone* class contains string constants of PHP *DateTimeZone::ALL*
+
+`Zone::DHAKA` is actually `'Asia/Dhaka'` string.
+
+There are **424** ENUMS in these class. 
+
+### Format
+*Format* class contains `const string`s of PHP *DateTime->format()* as enums
+
+`Format::DATE_MYSQL` is actually `'Y-m-d'`
+
+Available ENUMS in *Versin 1.0*:
+
+`DATE_MYSQL`, `TIME_MYSQL`, `DATETIME_MYSQL`, `DATE_INT`, `DATE_SLASH`, `DATE_ASIA`, `ISO`, `BLOG`, `TIME_CLOCK`, `TIME_CLOCK12`
+
+### Time
+*Time* class contains `const int`s of *TimeMachine->Get()* constants as enums
+
+Available ENUMS in *Versin 1.0*:
+
+`TODAY`, `NOW`, `NEXTWEEK`, `NEXTMONTH`, `NEXTYEAR`, `PREVWEEK`, `PREVMONTH`, `PREVYEAR`, `T_5MIN`, `T_10MIN`, `T_30MIN`, `T_1H`
+
+### Difference
+*Difference* class contains `const int`s of *TimeMachine::GetDifference()* constants as enums. These are fetch type of result.
+
+Available ENUMS in *Versin 1.0*:
+
+`ASSOC`, `OBJ`
+
+### Interval 
+*Interval* class contains `const string`s of PHP *DateTimeInterval()* as enums
+
+`Interval::MIN1` is actually `'PT1M'`
+
+There are 16 available INTERVAL ENUMS in *Versin 1.0*. Try a code editor suggestion to get them.
+> In advance cases where you might need personalized intervals, follow PHP *DateTimeInterval()* Formats. [Click here](https://www.php.net/manual/en/dateinterval.format.php) to read PHP documentation.
+
+### Period 
+*Period* class contains `const string`s of PHP *DateTimeInterval()* as enums
+
+`Period::A_DAY` is actually `'P1D'`
+
+There are 6 available INTERVAL ENUMS in *Versin 1.0*. Try a code editor suggestion to get them.
+> In advance cases where you might need personalized intervals, follow PHP *DateTimeInterval()* Formats. [Click here](https://www.php.net/manual/en/dateinterval.format.php) to read PHP documentation.
