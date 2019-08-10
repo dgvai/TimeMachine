@@ -21,11 +21,10 @@
             if(isset($timezone))
             {
                 $this->SetTimeZone($timezone);
-            }
-
-            if(isset($timestamp))
-            {
-                $this->SetTimeStamp($timestamp);
+                if(isset($timestamp))
+                {
+                    $this->SetTimeStamp($timestamp);
+                }
             }
             return $this;
         }
