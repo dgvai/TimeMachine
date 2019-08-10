@@ -153,7 +153,27 @@
                 array_push($PeriodArray,$date->format($__FORMAT));
             }
             return $PeriodArray;
-        }       
+        }
+        
+        public static function CheckLimit(TimeMachine $DateTime, $LimitTime)
+        {
+            $LT = new DateTime($LimitTime,$DateTime->TimeZone);
+            $difference = $DateTime->DateTime->diff($LT, false);
+            return ($difference->invert == 1) ? false : true;
+        }
+
+        public static function CheckBetween($StartTime, $EndTime, TimeMachine $NOW)
+        {
+            $ST = new DateTime($StartTime,$NOW->TimeZone);
+            $ET = new DateTime($EndTime,$NOW->TimeZone);
+            $check_start    = $NOW->DateTime->diff($ST,false);
+            $check_end      = $NOW->DateTime->diff($ET,false);
+            $return = array();
+            $return['start']    = ($check_start->invert == 1) ? true : false;
+            $return['end']      = ($check_end->invert == 1) ? false : true;
+            $return['between']  = ($return['start'] == true && $return['end'] == true) ? true : false;
+            return (object)$return;
+        }
     }
 
     class Zone extends TimeMachine
@@ -587,10 +607,10 @@
 
     class Format extends TimeMachine
     {
-        const DATE_MYSQL    =   'Y-m-d';                const TIME_CLOCK    =   'h:i A';
-        const TIME_MYSQL    =   'H:i:s';                const TIME_CLOCK12  =   'H:i';
-        const DATETIME_MYSQL=   'Y-m-d H:i:s';          
-        const DATE_INT      =   'Ymd';
+        const DATE_MYSQL    =   'Y-m-d';                const TIME_CLOCK    =   'H:i';
+        const TIME_MYSQL    =   'H:i:s';                const TIME_CLOCK12  =   'h:i A';
+        const DATETIME_MYSQL=   'Y-m-d H:i:s';          const DAY_SHORT     =   'D';
+        const DATE_INT      =   'Ymd';                  const DAY_FULL      =   'l';
         const DATE_SLASH    =   'Y/m/d';
         const DATE_ASIA     =   'd-m-Y';
         const ISO           =   'c'; 

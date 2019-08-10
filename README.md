@@ -125,6 +125,33 @@ You just have to **include or clone** this class file to you workspace! That's a
   array()
 ```
 
+### CheckLimit()
+```php
+  // structure
+  public static CheckLimit(TimeMachine $DateTime, string $Limit)
+  
+  // example
+  $now = new TimeMachine(Zone::DHAKA);
+  $limit = '9:50 AM';
+  $bool = TimeMachine::CheckLimit($now,$limit);       //  Returns true if limit does not cross, false in other case
+  // returns 
+  bool
+```
+
+### CheckBetween()
+```php
+  // structure
+  public static CheckBetween(string $Start, string $End, TimeMachine $DateTime)
+  
+  // example
+  $now = new TimeMachine(Zone::DHAKA);
+  $start  = '9:00 AM';
+  $end    = '10:00 AM';
+  $result = TimeMachine::CheckBetween($start,$end,$now);
+  // returns 
+  Object
+```
+
 ### Show()
 ```php
   // structure
